@@ -7,4 +7,5 @@
     = csrf_meta_tags
   %body{"ng-app" => "companion_app", "ng-controller"=>"WelcomeIndexCtrl"}
     = render 'layouts/navigation'
+    %ng-view
     {{'WELCOME_INDEX_DESCRIPTION' | translate}}

@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular/angular.js
-//= require angular-route/angular-route.min.js
+//= require angular-route/angular-route.js
 //= require angular-cookie/angular-cookie.js
 //= require angular-materialize/src/angular-materialize.js
 //= require materialize/dist/js/materialize.min

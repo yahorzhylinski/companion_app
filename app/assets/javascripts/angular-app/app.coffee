@@ -1,10 +1,9 @@
 angular.module('companion_app', ['ngRoute','pascalprecht.translate', 'templates'])
-.config ($routeProvider)->
+.config ['$routeProvider', ($routeProvider)->
   $routeProvider
-  .when('/', {
-    templateUrl: 'angular-app/templates/login/new.html',
+  .when '/', {
+    templateUrl: 'welcome/index.html',
     controller: 'WelcomeIndexCtrl'
-  })
-  .otherwise({
-      redirectTo: '/'
-  });
+  }
+
+]
