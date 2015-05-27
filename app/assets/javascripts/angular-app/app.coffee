@@ -1,8 +1,9 @@
-angular.module('companion_app', ['ngRoute','pascalprecht.translate', 'templates'])
-.config ['$routeProvider', ($routeProvider)->
-  $routeProvider
-  .when '/', {
-    templateUrl: 'welcome/index.html',
+angular.module('companion_app', ['ui.router','pascalprecht.translate', 'templates'])
+.config ['$stateProvider', ($stateProvider)->
+  $stateProvider
+  .state 'root', {
+    url: '',
+    templateUrl: 'assets/angular-app/templates/welcome/index.html.haml',
     controller: 'WelcomeIndexCtrl'
   }
 
