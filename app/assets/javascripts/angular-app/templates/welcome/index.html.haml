@@ -1,13 +1,16 @@
 #index-banner.section.no-pad-bot
   .container
-    %h1.header.center Попутчик.by
+    %h1.header.center {{'WELCOME_INDEX_TITLE' | translate}}
 
     .row.center
-      %h5.header.col.s12.light A modern responsive front-end framework based on Material Design
+      %h5.header.col.s12.light 
+        {{'WELCOME_INDEX_DESCRIPTION' | translate}}
     .row.center
-      %a#download-button.btn-large.waves-effect.waves-light.orange{:href => "http://materializecss.com/getting-started.html"} Get Started
-    %br/
-    %br/
+      %a#download-button.btn-large.waves-effect.waves-light.orange{ "ng-click" => "openSearchForm()", "ng-if" => "!$scope.findFormVisible" } 
+        {{'WELCOME_INDEX_FIND_CAR_BTN' | translate}}
+   
+    %search-directive
+
   .container
     .section
       / Icon Section
