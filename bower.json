@@ -12,7 +12,8 @@
       "ng-token-auth": "latest",
       "angular-materialize": "latest",
       "materialize": "latest",
-      "angular-translate": "latest"
+      "angular-translate": "latest",
+      "angular-i18n": "latest"
     }
   }
 }
