@@ -5,5 +5,6 @@ angular.module('companion_app').controller 'WelcomeIndexCtrl',
       $scope.findFormVisible = false
 
       $scope.openSearchForm = ()->
+        console.log "test"
         $scope.findFormVisible = true
 

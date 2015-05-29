@@ -10,10 +10,11 @@
       "angular": "v1.3.0",
       "ui-router": "latest",
       "ng-token-auth": "latest",
-      "angular-materialize": "latest",
-      "materialize": "latest",
       "angular-translate": "latest",
-      "angular-i18n": "latest"
+      "angular-i18n": "latest",
+      "bootstrap": "latest",
+      "angular-bootstrap": "latest",
+      "rdash-ui": "latest"
     }
   }
 }

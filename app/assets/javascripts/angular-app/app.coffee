@@ -1,4 +1,4 @@
-angular.module('companion_app', ['ui.router','pascalprecht.translate', 'templates'])
+angular.module('companion_app', ['ui.bootstrap', 'ui.router','pascalprecht.translate', 'templates'])
 .config ['$stateProvider', ($stateProvider)->
   $stateProvider
   .state 'root', {

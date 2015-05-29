@@ -1,0 +1,17 @@
+.search-form-row {
+  background-color: white;
+  padding: 20px !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.dropdown-content.select-dropdown {
+  z-index: 2;
+}
+
+.time-date.vertical {
+  width: 100%;
+}

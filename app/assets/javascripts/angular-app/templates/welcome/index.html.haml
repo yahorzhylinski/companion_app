@@ -1,70 +1,75 @@
-#index-banner.section.no-pad-bot
-  .container
-    %h1.header.center {{'WELCOME_INDEX_TITLE' | translate}}
-
-    .row.center
-      %h5.header.col.s12.light 
-        {{'WELCOME_INDEX_DESCRIPTION' | translate}}
-    .row.center
-      %a#download-button.btn-large.waves-effect.waves-light.orange{ "ng-click" => "openSearchForm()", "ng-if" => "!$scope.findFormVisible" } 
-        {{'WELCOME_INDEX_FIND_CAR_BTN' | translate}}
-   
-    %search-directive
-
-  .container
-    .section
-      / Icon Section
-      .row
-        .col.s12.m4
-          .icon-block
-            %h2.center.light-blue-text
-              %i.mdi-image-flash-on
-            %h5.center Speeds up development
-            %p.light We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.
-        .col.s12.m4
-          .icon-block
-            %h2.center.light-blue-text
-              %i.mdi-social-group
-            %h5.center User Experience Focused
-            %p.light By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.
-        .col.s12.m4
-          .icon-block
-            %h2.center.light-blue-text
-              %i.mdi-action-settings
-            %h5.center Easy to work with
-            %p.light We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.
-    %br/
-    %br/
-    .section
-  %footer.page-footer.orange
-    .container
-      .row
-        .col.l6.s12
-          %h5.white-text Company Bio
-          %p.grey-text.text-lighten-4 We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.
-        .col.l3.s12
-          %h5.white-text Settings
-          %ul
-            %li
-              %a.white-text{:href => "#!"} Link 1
-            %li
-              %a.white-text{:href => "#!"} Link 2
-            %li
-              %a.white-text{:href => "#!"} Link 3
-            %li
-              %a.white-text{:href => "#!"} Link 4
-        .col.l3.s12
-          %h5.white-text Connect
-          %ul
-            %li
-              %a.white-text{:href => "#!"} Link 1
-            %li
-              %a.white-text{:href => "#!"} Link 2
-            %li
-              %a.white-text{:href => "#!"} Link 3
-            %li
-              %a.white-text{:href => "#!"} Link 4
-    .footer-copyright
-      .container
-        Made by
-        %a.orange-text.text-lighten-3{:href => "http://materializecss.com"} Materialize
+#page-wrapper{"ng-class" => "{'open': toggle}", "ng-cloak" => ""}
+  / Sidebar
+  #sidebar-wrapper
+    %ul.sidebar
+      %li.sidebar-main
+        %a{"ng-click" => "toggleSidebar()"}
+          Dashboard
+          %span.menu-icon.glyphicon.glyphicon-transfer
+      %li.sidebar-title
+        %span NAVIGATION
+      %li.sidebar-list
+        %a{:href => "#"}
+          Dashboard
+          %span.menu-icon.fa.fa-tachometer
+      %li.sidebar-list
+        %a{:href => "#/tables"}
+          Tables
+          %span.menu-icon.fa.fa-table
+    .sidebar-footer
+      .col-xs-4
+        %a{:href => "https://github.com/rdash/rdash-angular", :target => "_blank"}
+          Github
+      .col-xs-4
+        %a{:href => "https://github.com/rdash/rdash-angular/README.md", :target => "_blank"}
+          About
+      .col-xs-4
+        %a{:href => "#"}
+          Support
+  / End Sidebar
+  #content-wrapper
+    .page-content
+      / Header Bar
+      .row.header
+        .col-xs-12
+          .user.pull-right
+            .item.dropdown
+              %a.dropdown-toggle{:href => "#"}
+                %img{:src => "img/avatar.jpg"}/
+              %ul.dropdown-menu.dropdown-menu-right
+                %li.dropdown-header
+                  Joe Bloggs
+                %li.divider
+                %li.link
+                  %a{:href => "#"}
+                    Profile
+                %li.link
+                  %a{:href => "#"}
+                    Menu Item
+                %li.link
+                  %a{:href => "#"}
+                    Menu Item
+                %li.divider
+                %li.link
+                  %a{:href => "#"}
+                    Logout
+            .item.dropdown
+              %a.dropdown-toggle{:href => "#"}
+                %i.fa.fa-bell-o
+              %ul.dropdown-menu.dropdown-menu-right
+                %li.dropdown-header
+                  Notifications
+                %li.divider
+                %li
+                  %a{:href => "#"} Server Down!
+          .meta
+            .page
+              Dashboard
+            .breadcrumb-links
+              Home / Dashboard
+      / End Header Bar
+      / Main Content
+      %div{"ui-view" => ""}
+    / End Page Content
+  / End Content Wrapper
+/ End Page Wrapper
