@@ -5,6 +5,9 @@
 //= require angular-cookie/angular-cookie.js
 //= require bootstrap/dist/js/bootstrap.js
 //= require angular-bootstrap/ui-bootstrap.js
+//= require moment/min/moment-with-locales.min.js
+//= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
+
 
 //= require ng-token-auth/src/ng-token-auth
 //= require angular-translate/angular-translate.min
@@ -12,6 +15,7 @@
 //= require angular-rails-templates
 
 //= require angular-app/app
+//= require angular-app/layout_ctrl
 //= require_tree ./angular-app/templates
 //= require_tree ./angular-app/modules
 //= require_tree ./angular-app/filters

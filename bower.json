@@ -14,7 +14,9 @@
       "angular-i18n": "latest",
       "bootstrap": "latest",
       "angular-bootstrap": "latest",
-      "rdash-ui": "latest"
+      "rdash-ui": "latest",
+      "eonasdan-bootstrap-datetimepicker": "latest",
+      "moment": "latest"
     }
   }
 }

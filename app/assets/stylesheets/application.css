@@ -13,6 +13,7 @@
  *= require bootstrap/dist/css/bootstrap.css
  *= require rdash-ui/dist/css/rdash.css
  *= require font-awesome
+ *= require eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
  *= require overrides
  *= require_tree .
  *= require_self

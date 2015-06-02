@@ -1,11 +1,15 @@
 !!!
-%html
+%html{lang: "en", "ng-app": "companion_app"}
   %head
-    %title CompanionApp
+    %meta{charset: "UTF-8"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %title RDash AngularJS
+
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places&sensor=false'
     = csrf_meta_tags
-  %body{"ng-app" => "companion_app"}
+
+  %body
+
     = render 'layouts/navigation'
-    %div{"ui-view"=>""}

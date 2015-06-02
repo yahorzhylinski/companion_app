@@ -1,70 +1,32 @@
 .row
-  %form.col.s12.m6.offset-m3.novalidate.search-form-row
-    .row
-      .input-field.col.s12
-        %i.fa.fa-map-marker.prefix
-        %input#from_place.validate{ type: "text", "ng-model" => "itinerary.fromPlace", placeholder: "" }
-        %label{ for: "from_place"}
+  %div
+    %form.form-horizontal.novalidate
+      .form-group
+        %label.col-sm-4.control-label.hidden-xs{for: "from_place"} 
           {{'SEARCH_FORM_FROM_LABEL' | translate}}
-    .row
-      .input-field.col.s12
-        %i.fa.fa-map-marker.prefix
-        %input#to_place.validate{ type: "text", "ng-model" => "itinerary.toPlace", placeholder: "" }
-        %label{ for: "to_place"} 
+        .col-sm-8
+          .input-group
+            %span#basic-addon1.input-group-addon
+              %i.fa.fa-map-marker
+            / %input.form-control{"aria-describedby" => "basic-addon1", :placeholder => "Username", :type => "text"}/
+            %input#from_place.form-control.validate{placeholder: "{{'SEARCH_FORM_FROM_LABEL' | translate}}", type: "text", "ng-model": "itinerary.fromPlace"}/
+      .form-group
+        %label.col-sm-4.control-label.hidden-xs{for: "to_place"} 
           {{'SEARCH_FORM_TO_LABEL' | translate}}
-    .row
-      .input-field.col.s12
-        %i.fa.fa-clock-o.prefix
-        %label{ for: "itinerary_date"}
-          {{'SEARCH_FORM_DATE_LABEL' | translate}}
-        %input#itinerary_date.validate.cursor-pointer.datepicker{ type: "text", "ng-focus" => "openDatePicker()" }
-    .row
-
-
-      / Modal Structure
-      #modal1.modal
-        .modal-content
-          %time-date-picker{"ng-model" => "dateValue"}
-
-      / .input-field.col.s6
-      /   %select#hours_start
-      /     %option{ disabled: "disabled", selected: "selected", value: "{{'SEARCH_FORM_HOUR_START_LABEL' | translate}}" } 
-      /     %option{:value => "1"} 1
-      /     %option{:value => "2"} 2
-      /     %option{:value => "3"} 3
-      /     %option{:value => "4"} 4
-      /     %option{:value => "5"} 5
-      /     %option{:value => "6"} 6
-      /     %option{:value => "7"} 7
-      /     %option{:value => "8"} 8
-      /     %option{:value => "9"} 9
-      /     %option{:value => "10"} 10
-      /     %option{:value => "11"} 11
-      /     %option{:value => "12"} 12
-      /     %option{:value => "13"} 13
-      /     %option{:value => "14"} 14
-      /     %option{:value => "15"} 15
-      /     %option{:value => "16"} 16
-      /     %option{:value => "17"} 17
-      /     %option{:value => "18"} 18
-      /     %option{:value => "19"} 19
-      /     %option{:value => "20"} 20
-      /     %option{:value => "21"} 21
-      /     %option{:value => "22"} 22
-      /     %option{:value => "23"} 23
-      /   %label 
-      /     {{'SEARCH_FORM_HOUR_START_LABEL' | translate}}
-      / .input-field.col.s6
-      /   %select#minutes_start
-      /     %option{ disabled: "disabled", selected: "selected", value: "{{'SEARCH_FORM_MINUTE_START_LABEL' | translate}}" } 
-      /     %option{:value => "00"} 00
-      /     %option{:value => "15"} 15
-      /     %option{:value => "30"} 30
-      /     %option{:value => "45"} 45
-      /   %label 
-      /     {{'SEARCH_FORM_MINUTE_START_LABEL' | translate}}
-    .row
-      .input-field.col.s12.center-align
-        %button.btn.waves-effect.waves-light.btn-large{ name: "action", type: "submit"}
-          {{'SEARCH_FORM_FIND_CAR_BTN' | translate}}
-          %i.fa.fa-search.right
+        .col-sm-8
+          .input-group
+            %span#basic-addon1.input-group-addon
+              %i.fa.fa-map-marker
+            %input#to_place.form-control.validate{placeholder: "{{'SEARCH_FORM_TO_LABEL' | translate}}", type: "text", "ng-model": "itinerary.toPlace"}/
+      .form-group
+        %label.col-sm-4.control-label.hidden-xs{for: "datetime"} 
+          {{'SEARCH_FORM_DATETIMEPICKER_LABEL' | translate}}
+        .col-sm-8
+          #datetimepicker.input-group.date
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-calendar
+            %input#datetime.form-control{type: "text"}/
+      .form-group
+        .col-sm-offset-4.col-sm-8
+          %button.btn.btn-default.btn-info.xs-block{:type => "submit"} 
+            {{'SEARCH_FORM_FIND_CAR_BTN' | translate}}

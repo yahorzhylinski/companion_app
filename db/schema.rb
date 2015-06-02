@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518083409) do
+ActiveRecord::Schema.define(version: 20150524115450) do
+
+  create_table "trips", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.boolean  "regular",     limit: 1
+    t.datetime "start_time",                null: false
+    t.datetime "end_time"
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "trips", ["id", "user_id"], name: "index_trips_on_id_and_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               limit: 255,                null: false
