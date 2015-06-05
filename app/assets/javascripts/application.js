@@ -7,7 +7,7 @@
 //= require angular-bootstrap/ui-bootstrap.js
 //= require moment/min/moment-with-locales.min.js
 //= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
-
+//= require angular-notify/dist/angular-notify.js
 
 //= require ng-token-auth/src/ng-token-auth
 //= require angular-translate/angular-translate.min

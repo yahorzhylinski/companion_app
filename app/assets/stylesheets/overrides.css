@@ -3,3 +3,27 @@
     width: 100%;
   }
 }
+
+.padding-3-px {
+  padding: 3px;
+}
+
+.cg-notify-close {
+  padding-top: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.login-png {
+  width: 70px;
+}
+
+.not-decorated {
+  text-decoration: none;
+}
+
+.width-100 {
+  width: 100%;
+}

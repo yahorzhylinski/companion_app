@@ -9,23 +9,18 @@
       %li.sidebar-title
         %span NAVIGATION
       %li.sidebar-list
-        %a{:href => "#"}
-          Dashboard
-          %span.menu-icon.fa.fa-tachometer
+        %a.cursor-pointer.not-decorated{ "ng-href": "/#/?lang={{locale}}" } 
+          {{ 'NAVIGATION_ROOT_LINK' | translate }}
+
+          %span.menu-icon.fa.fa-car 
       %li.sidebar-list
-        %a{:href => "#/tables"}
-          Tables
-          %span.menu-icon.fa.fa-table
+        %a{ "ng-href": "/#/about?lang={{locale}}" }
+          {{ 'NAVIGATION_ABOUT_LINK' | translate }}
+          %span.menu-icon.fa.fa-info-circle
     .sidebar-footer
-      .col-xs-4
-        %a{:href => "https://github.com/rdash/rdash-angular", :target => "_blank"}
+      .col-xs-4.col-xs-offset-4
+        %a{ href: "https://github.com/zhilinskyegor", target: "_blank" }
           Github
-      .col-xs-4
-        %a{:href => "https://github.com/rdash/rdash-angular/README.md", :target => "_blank"}
-          About
-      .col-xs-4
-        %a{:href => "#"}
-          Support
   / End Sidebar
   #content-wrapper
     .page-content
@@ -33,13 +28,11 @@
       .row.header
         .col-xs-12
           .user.pull-right
-            .item.dropdown
-              %a.dropdown-toggle{:href => "#"}
-                %img{:src => "img/avatar.jpg"}/
-              %ul.dropdown-menu.dropdown-menu-right
-                %li.dropdown-header
-                  Joe Bloggs
-                %li.divider
+
+            .item.dropdown{ "ng-class": "{'open': isNavbarProfileOpen}" }
+              %a.dropdown-toggle.cursor-pointer{ "ng-click": "toggleProfileNavbar()" }
+                = image_tag 'default_avatar.png'
+              %ul.dropdown-menu.dropdown-menu-right{ "ng-if": "currentUser" }
                 %li.link
                   %a{:href => "#"}
                     Profile
@@ -53,20 +46,30 @@
                 %li.link
                   %a{:href => "#"}
                     Logout
+              %ul.dropdown-menu.dropdown-menu-right{ "ng-if": "!currentUser", "ng-click": "toggleProfileNavbar()" }
+                %li.link
+                  %a{ "ng-href": "/#/login?lang={{locale}}" }
+                    {{ 'NAVBAR_LOGIN_BTN' | translate }}
+
+
             .item.dropdown
-              %a.dropdown-toggle{:href => "#"}
-                %i.fa.fa-bell-o
+              %a.dropdown-toggle.cursor-pointer{ "ng-click": "changeLanguage()" }
+                = image_tag "ru-flag.png", "ng-show": "currentLanguage == 'ru'"
+                = image_tag "uk-flag.png", "ng-show": "currentLanguage == 'en'"
               %ul.dropdown-menu.dropdown-menu-right
-                %li.dropdown-header
-                  Notifications
-                %li.divider
-                %li
-                  %a{:href => "#"} Server Down!
+                %li.link
+                  %a
+                    = image_tag "ru-flag.png"
+                %li.link
+                  %a
+                    = image_tag "uk-flag.png"
+
+
+
           .meta
             .page
               {{'WELCOME_INDEX_TITLE' | translate}}
             .breadcrumb-links
               {{'WELCOME_INDEX_DESCRIPTION' | translate}}
-
       %div{"ui-view": ""}
           

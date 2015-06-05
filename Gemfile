@@ -17,6 +17,7 @@ gem 'rails-api'
 gem 'devise_token_auth'
 
 gem 'omniauth'
+gem 'omniauth-facebook'
 
 gem 'angular-rails-templates'
 gem 'bower-rails'
@@ -24,6 +25,8 @@ gem 'bower-rails'
 gem 'haml'
 gem 'html2haml'
 gem "font-awesome-rails"
+
+gem 'will_paginate', '~> 3.0.6'
 
 group :development, :test do
   gem 'byebug'

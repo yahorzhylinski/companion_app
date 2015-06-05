@@ -7,7 +7,7 @@
         .col-sm-8
           .input-group
             %span#basic-addon1.input-group-addon
-              %i.fa.fa-map-marker
+              %i.fa.fa-map-marker.padding-3-px
             / %input.form-control{"aria-describedby" => "basic-addon1", :placeholder => "Username", :type => "text"}/
             %input#from_place.form-control.validate{placeholder: "{{'SEARCH_FORM_FROM_LABEL' | translate}}", type: "text", "ng-model": "itinerary.fromPlace"}/
       .form-group
@@ -16,17 +16,17 @@
         .col-sm-8
           .input-group
             %span#basic-addon1.input-group-addon
-              %i.fa.fa-map-marker
-            %input#to_place.form-control.validate{placeholder: "{{'SEARCH_FORM_TO_LABEL' | translate}}", type: "text", "ng-model": "itinerary.toPlace"}/
+              %i.fa.fa-map-marker.padding-3-px
+            %input#to_place.form-control.validate{ placeholder: "{{'SEARCH_FORM_TO_LABEL' | translate}}", type: "text", "ng-model": "itinerary.toPlace" }/
       .form-group
         %label.col-sm-4.control-label.hidden-xs{for: "datetime"} 
           {{'SEARCH_FORM_DATETIMEPICKER_LABEL' | translate}}
         .col-sm-8
-          #datetimepicker.input-group.date
+          .datetimepicker.input-group.date
             %span.input-group-addon
               %span.glyphicon.glyphicon-calendar
-            %input#datetime.form-control{type: "text"}/
+            %input#datetime.datetimepicker.form-control{ type: "text", placeholder: "{{'SEARCH_FORM_DATETIMEPICKER_LABEL' | translate}}" }/
       .form-group
         .col-sm-offset-4.col-sm-8
-          %button.btn.btn-default.btn-info.xs-block{:type => "submit"} 
+          %a.btn.btn-default.btn-info.xs-block{ type: "submit",  "ng-click": "findItinerary()" } 
             {{'SEARCH_FORM_FIND_CAR_BTN' | translate}}
